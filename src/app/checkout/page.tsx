@@ -72,7 +72,7 @@ export default function CheckoutPage() {
       subtotal,
       discount: 0,
       totalAmount,
-      status: 'Menunggu Pembayaran',
+      status: 'Diproses',
       paymentMethod,
     });
 

@@ -47,7 +47,7 @@ export default function PaymentModal({ order, onClose }: PaymentModalProps) {
     setIsProcessing(true);
     setTimeout(() => {
       updateOrderStatus(order.id, 'Diproses');
-      showToast('🎉 Pembayaran Berhasil Terverifikasi! Pesanan Anda sedang diproses.');
+      showToast('🎉 Pembayaran Berhasil Terverifikasi! Pesanan Anda LANGSUNG DIPROSES otomatis oleh Dapur Metro.');
       setIsProcessing(false);
       onClose();
       router.push(`/pesanan/${order.id}`);

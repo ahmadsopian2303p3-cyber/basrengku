@@ -104,10 +104,12 @@ export const useStore = create<StoreState>()(
         const newOrder: Order = {
           ...orderData,
           id: orderId,
+          status: 'Diproses', // Otomatis langsung diproses tanpa persetujuan manual admin
           createdAt: new Date().toISOString(),
         };
         set({ orders: [newOrder, ...get().orders] });
         get().clearCart();
+        get().showToast('🎉 Pesanan berhasil dibuat & LANGSUNG DIPROSES oleh Toko!');
         return newOrder;
       },
       updateOrderStatus: (orderId, status, trackingNumber) => {
