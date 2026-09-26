@@ -132,18 +132,19 @@ export const useStore = create<StoreState>()(
       // Admin Auth implementation
       isAdminLoggedIn: false,
       loginAdmin: (email, pass) => {
-        if (email.trim() === 'admin@barengku.com' && pass === 'admin123') {
+        const cleanEmail = email.trim().toLowerCase();
+        // Strict secret admin credentials
+        const isValidAdmin = 
+          (cleanEmail === 'ahmadsopian@barengku.com' || cleanEmail === 'ahmadsopian') && 
+          pass === 'AdminBasreng2026!';
+
+        if (isValidAdmin) {
           set({ isAdminLoggedIn: true });
-          get().showToast('Selamat datang Admin Barengku!');
+          get().showToast('Selamat datang Admin Utama Barengku!');
           return true;
         }
-        // Also accept simple login demo if email includes admin
-        if (email.toLowerCase().includes('admin') && pass.length >= 4) {
-          set({ isAdminLoggedIn: true });
-          get().showToast('Login Admin Berhasil.');
-          return true;
-        }
-        get().showToast('Email atau password admin salah!');
+        
+        get().showToast('Email/Username atau password admin salah!');
         return false;
       },
       logoutAdmin: () => {

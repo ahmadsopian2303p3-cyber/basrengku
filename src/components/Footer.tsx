@@ -59,11 +59,6 @@ export default function Footer() {
                   <span>›</span> Keranjang Belanja
                 </Link>
               </li>
-              <li>
-                <Link href="/admin/login" className="text-gray-400 hover:text-amber-400 transition-colors flex items-center gap-2">
-                  <span>›</span> Portal Admin Toko
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -127,7 +122,6 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link href="/produk" className="hover:text-gray-300">Produk Best Seller</Link>
             <Link href="/tentang" className="hover:text-gray-300">Lokasi Toko</Link>
-            <Link href="/admin/login" className="hover:text-amber-400">Admin Area</Link>
           </div>
         </div>
       </div>

@@ -10,8 +10,8 @@ export default function AdminLoginPage() {
   const loginAdmin = useStore((state) => state.loginAdmin);
   const showToast = useStore((state) => state.showToast);
 
-  const [email, setEmail] = useState('admin@barengku.com');
-  const [password, setPassword] = useState('admin123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,22 +37,22 @@ export default function AdminLoginPage() {
             Portal Login Admin Toko
           </h1>
           <p className="text-xs text-gray-500">
-            Kelola stok produk, grafik pendapatan, dan transaksi pesanan pelanggan Barengku.
+            Khusus Pemilik Toko & Pengelola Toko Basrengku.
           </p>
         </div>
 
         {/* Login Form */}
         <form onSubmit={handleLogin} className="space-y-4 text-xs">
           <div>
-            <label className="font-bold text-gray-700 block mb-1">Email Admin</label>
+            <label className="font-bold text-gray-700 block mb-1">Username / Email Admin</label>
             <div className="relative">
               <Mail className="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
               <input
-                type="email"
+                type="text"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="admin@barengku.com"
+                placeholder="Masukkan Username / Email Admin"
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none"
               />
             </div>
@@ -71,15 +71,6 @@ export default function AdminLoginPage() {
                 className="w-full pl-10 pr-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-sm focus:ring-2 focus:ring-red-500 focus:outline-none"
               />
             </div>
-          </div>
-
-          {/* Quick Preset Demo Login Info */}
-          <div className="bg-amber-50 p-3 rounded-2xl border border-amber-200 text-amber-800 text-[11px] space-y-1">
-            <span className="font-bold block flex items-center gap-1">
-              <KeyRound className="w-3.5 h-3.5 text-amber-600" /> Demo Admin Credentials:
-            </span>
-            <p>Email: <code className="font-mono bg-amber-100 px-1 rounded">admin@barengku.com</code></p>
-            <p>Password: <code className="font-mono bg-amber-100 px-1 rounded">admin123</code></p>
           </div>
 
           <button
