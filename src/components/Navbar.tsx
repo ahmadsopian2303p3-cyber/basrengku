@@ -4,14 +4,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useStore } from '@/lib/store';
-import { ShoppingBag, Flame, Menu, X, ShieldCheck, ChevronRight } from 'lucide-react';
+import { ShoppingBag, Flame, Menu, X, ChevronRight } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const cartCount = useStore((state) => state.getCartCount());
-  const isAdminLoggedIn = useStore((state) => state.isAdminLoggedIn);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,17 +70,6 @@ export default function Navbar() {
 
           {/* Right Action Icons */}
           <div className="flex items-center gap-3">
-            {/* Admin Badge (Only visible when logged in as Admin) */}
-            {isAdminLoggedIn && (
-              <Link
-                href="/admin/dashboard"
-                className="hidden sm:flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-full border bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100 transition-all"
-              >
-                <ShieldCheck className="w-4 h-4 text-red-600" />
-                <span>Panel Admin</span>
-              </Link>
-            )}
-
             {/* Shopping Cart Button */}
             <Link
               href="/keranjang"
@@ -125,20 +113,6 @@ export default function Navbar() {
                 <ChevronRight className="w-5 h-5 opacity-60" />
               </Link>
             ))}
-
-            {isAdminLoggedIn && (
-              <Link
-                href="/admin/dashboard"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-between px-4 py-3 rounded-xl text-base font-bold text-amber-700 bg-amber-50 border border-amber-200"
-              >
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-amber-600" />
-                  <span>Dashboard Admin</span>
-                </div>
-                <ChevronRight className="w-5 h-5 opacity-60" />
-              </Link>
-            )}
           </div>
         </div>
       )}

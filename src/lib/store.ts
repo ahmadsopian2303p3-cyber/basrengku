@@ -170,7 +170,6 @@ export const useStore = create<StoreState>()(
         cart: state.cart,
         products: state.products,
         orders: state.orders,
-        isAdminLoggedIn: state.isAdminLoggedIn,
       }),
     }
   )
