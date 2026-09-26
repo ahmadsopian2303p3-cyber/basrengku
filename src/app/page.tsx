@@ -44,7 +44,7 @@ export default function Home() {
               {/* Main Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-[1.15]">
                 Renyahnya Nampol, <br />
-                <span className="text-transparent bg-clip-text red-gradient-bg">
+                <span className="text-red-600">
                   Bumbu Merah Merona
                 </span> Bikin Nagih!
               </h1>
