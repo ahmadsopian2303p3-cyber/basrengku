@@ -1,0 +1,183 @@
+import { Product, Order, CourierOption } from './types';
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'prod-1',
+    name: 'Basreng Pedas Daun Jeruk (250g)',
+    price: 18000,
+    description: 'Basreng renyah iris tipis melimpah bumbu rempah merah merona dipadu aroma harum kaffir lime leaves (daun jeruk) asli. Sensasi pedas gurih nagih!',
+    category: 'Pedas Daun Jeruk',
+    image: '/images/basreng_pedas_jeruk.jpg',
+    spiceLevel: 4,
+    stock: 120,
+    isBestSeller: true,
+    weightGrams: 250,
+  },
+  {
+    id: 'prod-2',
+    name: 'Basreng Fire Level 5 (Extra Pedas 250g)',
+    price: 20000,
+    description: 'Khusus buat pecinta pedas ekstrim! Olahan basreng berkualitas tinggi diguyur minyak cabai merah membara dan bubuk cabai asli tanpa pengawet.',
+    category: 'Pedas Daun Jeruk',
+    image: '/images/basreng_extra_pedas.jpg',
+    spiceLevel: 5,
+    stock: 85,
+    isBestSeller: true,
+    weightGrams: 250,
+  },
+  {
+    id: 'prod-3',
+    name: 'Basreng Original Gurih Bawang (250g)',
+    price: 17000,
+    description: 'Basreng goreng kriuk dengan bumbu rahasia gurih bawang putih pilihan. Tidak pedas, tekstur renyah mantap di setiap gigitan.',
+    category: 'Original',
+    image: '/images/basreng_original.jpg',
+    spiceLevel: 0,
+    stock: 90,
+    isBestSeller: true,
+    weightGrams: 250,
+  },
+  {
+    id: 'prod-4',
+    name: 'Basreng Keju Creamy (200g)',
+    price: 19000,
+    description: 'Perpaduan basreng gurih dengan balutan keju bubuk premium melimpah. Manis, gurih, keju abis!',
+    category: 'Spesial Rasa',
+    image: '/images/basreng_original.jpg',
+    spiceLevel: 1,
+    stock: 60,
+    isBestSeller: false,
+    weightGrams: 200,
+  },
+  {
+    id: 'prod-5',
+    name: 'Paket Bundling Hemat 3 Varian (750g)',
+    price: 50000,
+    description: 'Paket combo hemat berisi 1x Pedas Daun Jeruk, 1x Original Gurih Bawang, dan 1x Fire Level 5. Lebih hemat Rp 5.000!',
+    category: 'Bundling',
+    image: '/images/basreng_pedas_jeruk.jpg',
+    spiceLevel: 4,
+    stock: 40,
+    isBestSeller: true,
+    weightGrams: 750,
+  }
+];
+
+export const INITIAL_ORDERS: Order[] = [
+  {
+    id: 'BRG-98401',
+    customerName: 'Budi Santoso',
+    customerPhone: '081234567890',
+    customerEmail: 'budi@gmail.com',
+    shippingAddress: 'Jl. Ahmad Yani No. 45, Iringmulyo',
+    province: 'Lampung',
+    city: 'Kota Metro',
+    district: 'Metro Timur',
+    courier: 'J&T Express',
+    courierService: 'EZ (Regular)',
+    shippingFee: 12000,
+    items: [
+      { product: INITIAL_PRODUCTS[0], quantity: 2 },
+      { product: INITIAL_PRODUCTS[2], quantity: 1 }
+    ],
+    subtotal: 53000,
+    discount: 0,
+    totalAmount: 65000,
+    status: 'Selesai',
+    paymentMethod: 'QRIS',
+    trackingNumber: 'JT981048201',
+    createdAt: '2026-09-26T14:30:00Z',
+  },
+  {
+    id: 'BRG-98402',
+    customerName: 'Siti Aminah',
+    customerPhone: '085712349988',
+    customerEmail: 'siti.aminah@yahoo.com',
+    shippingAddress: 'Griya Asri Metro Block B4/12',
+    province: 'Lampung',
+    city: 'Kota Metro',
+    district: 'Metro Pusat',
+    courier: 'JNE',
+    courierService: 'REG',
+    shippingFee: 10000,
+    items: [
+      { product: INITIAL_PRODUCTS[1], quantity: 3 }
+    ],
+    subtotal: 60000,
+    discount: 5000,
+    totalAmount: 65000,
+    status: 'Dikirim',
+    paymentMethod: 'Virtual Account BCA',
+    trackingNumber: 'JNE882910394',
+    createdAt: '2026-09-26T18:15:00Z',
+  },
+  {
+    id: 'BRG-98403',
+    customerName: 'Rian Prasetyo',
+    customerPhone: '081988223344',
+    customerEmail: 'rianp@gmail.com',
+    shippingAddress: 'Jl. Sudirman No. 102',
+    province: 'Lampung',
+    city: 'Bandar Lampung',
+    district: 'Tanjung Karang',
+    courier: 'SiCepat',
+    courierService: 'REG',
+    shippingFee: 15000,
+    items: [
+      { product: INITIAL_PRODUCTS[4], quantity: 1 }
+    ],
+    subtotal: 50000,
+    discount: 0,
+    totalAmount: 65000,
+    status: 'Diproses',
+    paymentMethod: 'GoPay',
+    createdAt: '2026-09-27T02:10:00Z',
+  },
+  {
+    id: 'BRG-98404',
+    customerName: 'Dewi Lestari',
+    customerPhone: '082199884411',
+    customerEmail: 'dewi.les@gmail.com',
+    shippingAddress: 'Jl. Ganjar Asri No. 8',
+    province: 'Lampung',
+    city: 'Kota Metro',
+    district: 'Metro Barat',
+    courier: 'JNE',
+    courierService: 'YES',
+    shippingFee: 18000,
+    items: [
+      { product: INITIAL_PRODUCTS[0], quantity: 1 },
+      { product: INITIAL_PRODUCTS[1], quantity: 1 }
+    ],
+    subtotal: 38000,
+    discount: 0,
+    totalAmount: 56000,
+    status: 'Menunggu Pembayaran',
+    paymentMethod: 'QRIS',
+    createdAt: '2026-09-27T03:00:00Z',
+  }
+];
+
+export const MOCK_COURIERS: CourierOption[] = [
+  { id: 'c1', courier: 'JNE', service: 'REG (Regular)', etd: '1-2 Hari', cost: 12000 },
+  { id: 'c2', courier: 'JNE', service: 'YES (Yakin Besok Sampai)', etd: '1 Hari', cost: 20000 },
+  { id: 'c3', courier: 'J&T Express', service: 'EZ (Express)', etd: '1-2 Hari', cost: 13000 },
+  { id: 'c4', courier: 'POS Indonesia', service: 'Kilat Khusus', etd: '2-3 Hari', cost: 11000 },
+  { id: 'c5', courier: 'TIKI', service: 'REG', etd: '1-2 Hari', cost: 12500 }
+];
+
+export const STORE_INFO = {
+  name: 'Barengku - Basreng Super Pedas Gurih',
+  tagline: 'Sensasi Basreng Renyah Bumbu Merah Merona yang Bikin Nagih!',
+  address: 'Jl. Yos Sudarso No. 88, Ganjar Asri, Kec. Metro Barat, Kota Metro, Lampung 34125',
+  phone: '+62 822-8945-1234',
+  whatsapp: '6282289451234',
+  email: 'halo@barengku.com',
+  openHours: 'Senin - Minggu (08:00 - 21:00 WIB)',
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.9161726053336!2d105.305607!3d-5.114751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40bd83b4b5767b%3A0x2d3a9561b6b553e!2sMetro%2C%20Metro%20City%2C%20Lampung!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid',
+  socials: {
+    instagram: '@barengku.official',
+    tiktok: '@barengku.id',
+    shopee: 'shopee.co.id/barengku_store',
+  }
+};
