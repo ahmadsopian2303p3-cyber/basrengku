@@ -107,8 +107,8 @@ export default function Footer() {
                 </span>
               ))}
             </div>
-            <p className="text-[11px] text-gray-500 pt-2">
-              *Verifikasi pembayaran otomatis via instant update status pesanan.
+            <p className="text-[12px] text-gray-500 pt-2">
+              *Verifikasi pembayaran otomatis instant update status pesanan.
             </p>
           </div>
 

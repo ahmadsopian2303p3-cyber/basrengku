@@ -227,8 +227,8 @@ export default function CheckoutPage() {
                 <label
                   key={c.id}
                   className={`p-3.5 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${selectedCourier.id === c.id
-                      ? 'border-red-600 bg-red-50/70 shadow-sm'
-                      : 'border-gray-200 bg-white hover:border-red-200'
+                    ? 'border-red-600 bg-red-50/70 shadow-sm'
+                    : 'border-gray-200 bg-white hover:border-red-200'
                     }`}
                 >
                   <div className="flex items-center gap-3">
@@ -272,8 +272,8 @@ export default function CheckoutPage() {
                   key={pm.id}
                   onClick={() => setPaymentMethod(pm.id)}
                   className={`p-3 rounded-2xl border text-xs font-bold text-center transition-all ${paymentMethod === pm.id
-                      ? 'border-red-600 bg-red-600 text-white shadow-md'
-                      : 'border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300'
+                    ? 'border-red-600 bg-red-600 text-white shadow-md'
+                    : 'border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300'
                     }`}
                 >
                   {pm.label}
@@ -329,7 +329,7 @@ export default function CheckoutPage() {
             className="w-full py-4 rounded-2xl red-gradient-bg hover:bg-red-700 text-white font-extrabold text-sm shadow-xl shadow-red-500/30 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95 transition-all"
           >
             <CreditCard className="w-5 h-5 text-amber-300" />
-            <span>Bayar Sekarang (Midtrans / Xendit)</span>
+            <span>Bayar Sekarang</span>
             <ArrowRight className="w-5 h-5 ml-1" />
           </button>
 
