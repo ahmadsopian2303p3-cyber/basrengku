@@ -96,7 +96,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-      
+
       {/* Title */}
       <div className="border-b border-gray-200 pb-4">
         <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight flex items-center gap-2">
@@ -109,10 +109,10 @@ export default function CheckoutPage() {
       </div>
 
       <form onSubmit={handleCreateOrderAndPay} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
+
         {/* Left Form: Data Diri & Kurir */}
         <div className="lg:col-span-8 space-y-6">
-          
+
           {/* Card 1: Data Penerima */}
           <div className="bg-white p-6 rounded-3xl border border-red-100 shadow-sm space-y-4">
             <h2 className="text-base font-extrabold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3">
@@ -226,11 +226,10 @@ export default function CheckoutPage() {
               {MOCK_COURIERS.map((c) => (
                 <label
                   key={c.id}
-                  className={`p-3.5 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${
-                    selectedCourier.id === c.id
+                  className={`p-3.5 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${selectedCourier.id === c.id
                       ? 'border-red-600 bg-red-50/70 shadow-sm'
                       : 'border-gray-200 bg-white hover:border-red-200'
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center gap-3">
                     <input
@@ -259,7 +258,7 @@ export default function CheckoutPage() {
           <div className="bg-white p-6 rounded-3xl border border-red-100 shadow-sm space-y-4">
             <h2 className="text-base font-extrabold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-3">
               <ShieldCheck className="w-5 h-5 text-red-600" />
-              <span>Metode Pembayaran (Midtrans / Xendit)</span>
+              <span>Metode Pembayaran</span>
             </h2>
 
             <div className="grid grid-cols-3 gap-3">
@@ -272,11 +271,10 @@ export default function CheckoutPage() {
                   type="button"
                   key={pm.id}
                   onClick={() => setPaymentMethod(pm.id)}
-                  className={`p-3 rounded-2xl border text-xs font-bold text-center transition-all ${
-                    paymentMethod === pm.id
+                  className={`p-3 rounded-2xl border text-xs font-bold text-center transition-all ${paymentMethod === pm.id
                       ? 'border-red-600 bg-red-600 text-white shadow-md'
                       : 'border-gray-200 bg-gray-50 text-gray-700 hover:border-gray-300'
-                  }`}
+                    }`}
                 >
                   {pm.label}
                 </button>

@@ -13,7 +13,7 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gray-800">
-          
+
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
@@ -95,7 +95,7 @@ export default function Footer() {
               Pembayaran Otomatis
             </h3>
             <p className="text-xs text-gray-400">
-              Mendukung penuh pembayaran instan via Midtrans / Xendit Gateway:
+              Mendukung penuh pembayaran instan via:
             </p>
             <div className="flex flex-wrap gap-2 pt-1">
               {['QRIS', 'BCA', 'BRI', 'BNI', 'SeaBank', 'GoPay', 'OVO', 'Dana', 'ShopeePay'].map((pm) => (
@@ -108,7 +108,7 @@ export default function Footer() {
               ))}
             </div>
             <p className="text-[11px] text-gray-500 pt-2">
-              *Verifikasi pembayaran otomatis via Webhook instant update status pesanan.
+              *Verifikasi pembayaran otomatis via instant update status pesanan.
             </p>
           </div>
 
