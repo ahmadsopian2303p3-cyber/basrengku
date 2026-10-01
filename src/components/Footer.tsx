@@ -51,7 +51,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/tentang" className="hover:text-red-400 transition-colors flex items-center gap-2">
-                  <span>›</span> Tentang Kami & Outlet Metro
+                  <span>›</span> Tentang Kami
                 </Link>
               </li>
               <li>
